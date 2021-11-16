@@ -58,12 +58,12 @@ function OnlineCompiler() {
   const [pythonCode, setPythonCode] = useState(defaultCode.defaultCode.python);
 
   //************************************************************************************************************************************** */
-  export const compileCode = async (mystate, setLoading, setResult) => {
+  const compileCode = async (mystate, setLoading, setResult) => {
     try {
       Axios.defaults.withCredentials = true;
-
+      // console.log(mystate);
       Axios.post(
-        "http://" + AddressUrl + ":" + CompilerPort + "/api/v1/submit",
+        "http://" + "localhost" + ":" + "1991" + "/api/v1/submit",
         mystate
       )
         .then((res) => {
@@ -84,6 +84,7 @@ function OnlineCompiler() {
   //************************************************************************************************************************************** */
   const SubmitCode = (mystate) => {
     try {
+      // console.log(mystate);
       compileCode(mystate, setLoading, setResult);
     } catch (error) {}
   };
