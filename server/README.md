@@ -10,7 +10,7 @@ React js, material-ui
 
 # How to run
 
-yarn, yarn start
+yarn, node index.js
 
 # Requirements
 
