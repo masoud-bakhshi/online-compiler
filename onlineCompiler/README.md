@@ -14,4 +14,4 @@ yarn, yarn start
 
 # picture
 
-![online-compiler](https://github.com/masoud-bakhshi/onlinecompiler/blob/main/compiler.png)
+![online-compiler](https://github.com/masoud-bakhshi/online-compiler/blob/main/online-compiler.png)
