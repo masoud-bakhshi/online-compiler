@@ -6,17 +6,11 @@ var compression = require("compression");
 var RateLimit = require("express-rate-limit");
 const dotenv = require("dotenv");
 dotenv.config();
-const port = process.env.PORT;
+const port = 1991;
 app.use(compression());
 app.use(
   cors({
-    origin: [
-      process.env.ORIGINADDRESS1,
-      process.env.ORIGINADDRESS2,
-      process.env.ORIGINADDRESS3,
-      process.env.ORIGINADDRESS4,
-      process.env.ORIGINADDRESS5,
-    ],
+    origin: ["http://localhost:3000", "http://127.0.0.1:3000"],
     methods: ["GET", "POST", "DELETE"],
     credentials: true,
   })
@@ -40,7 +34,6 @@ app.use(express.json());
 
 app.use("/api/v1", Submitrouter);
 
-// const port = process.env.PORT || 1991;
 app.listen(port, () => {
   console.log(`Server started at port ${port}`);
 });
